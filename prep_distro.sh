@@ -30,7 +30,6 @@ read one five fifteen rest < /proc/loadavg
 install_pip () {
         curl https://bootstrap.pypa.io/get-pip.py | $SUDO $PYTHON_BIN
         $SUDO pip install setuptools -U
-        $SUDO pip install ansible -U
         $SUDO pip install netaddr -U
         $SUDO pip install dnspython -U
         $SUDO pip install passlib -U
