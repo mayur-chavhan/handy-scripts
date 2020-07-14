@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+echo ''
+echo '███╗░░░███╗██████╗░░██████╗░██╗░░██╗░█████╗░░██████╗███████╗'
+echo '████╗░████║██╔══██╗██╔════╝░██║░░██║██╔══██╗██╔════╝╚════██║'
+echo '██╔████╔██║██████╔╝██║░░██╗░███████║██║░░██║╚█████╗░░░░░██╔╝'
+echo '██║╚██╔╝██║██╔══██╗██║░░╚██╗██╔══██║██║░░██║░╚═══██╗░░░██╔╝░'
+echo '██║░╚═╝░██║██║░░██║╚██████╔╝██║░░██║╚█████╔╝██████╔╝░░██╔╝░░'
+echo '╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝░░╚═╝░╚════╝░╚═════╝░░░╚═╝░░░'
+echo ''
+echo 'Github: https://github.com/mrGh0s7'
+echo 'Facebook: https://www.facebook.com/techwhale.in'
+echo ''
+
+
+
 LOGS_FILES=(
         /var/log/messages # General message and system related stuff
         /var/log/auth.log # Authenication logs
