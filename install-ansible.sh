@@ -35,7 +35,21 @@ sudo apt update
 
 sudo apt install ansible -y
 
+install_pip () {
+        curl https://bootstrap.pypa.io/get-pip.py | $SUDO $PYTHON_BIN
+        $SUDO pip install setuptools -U
+        $SUDO pip install ansible -U
+        $SUDO pip install netaddr -U
+        $SUDO pip install dnspython -U
+        $SUDO pip install passlib -U
+        $SUDO pip install bcrypt -U
+}
 
+PYTHON_BIN=/usr/bin/python
+        install_pip
+        $SUDO pip install python-apt -U
+        set +x    
+        
 # Print out Ansible version
  ANSI_VER=$(ansible --version | head -n 1 | awk '{print $2}')
  printf "\nAnsible version %s is installed\n" "$ANSI_VER"
