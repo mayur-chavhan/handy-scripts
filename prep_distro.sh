@@ -40,7 +40,7 @@ install_pip () {
 prepare_ubuntu() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install software-properties-common curl git mc nano facter python python-apt aptitude -y
+        $SUDO apt install software-properties-common curl git mc neofetch nano facter python python-apt aptitude -y
         [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev htop libssl-dev make -y
 
         PYTHON_BIN=/usr/bin/python
@@ -57,7 +57,7 @@ prepare_ubuntu() {
 prepare_debian() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install dirmngr curl git mc nano facter python python-apt aptitude -y
+        $SUDO apt install dirmngr curl git mc nano facter python neofetch python-apt aptitude -y
         [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev libssl-dev make -y
 
         PYTHON_BIN=/usr/bin/python
@@ -74,7 +74,7 @@ prepare_debian() {
 prepare_raspbian() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install dirmngr mc nano git libffi-dev curl facter -y
+        $SUDO apt install dirmngr mc nano git libffi-dev curl neofetch facter -y
         PYTHON_BIN=/usr/bin/python
         install_pip
 
@@ -87,7 +87,7 @@ prepare_raspbian() {
 
 prepare_centos() {
         $SUDO yum install epel-release -y
-        $SUDO yum install git nano mc curl facter libselinux-python python -y
+        $SUDO yum install git nano mc curl facter neofetch libselinux-python python -y
         $SUDO yum update -y
 
         PYTHON_BIN=/usr/bin/python
@@ -101,7 +101,7 @@ prepare_centos() {
 }
 
 prepare_fedora() {
-        $SUDO dnf install git nano mc curl facter libselinux-python python python3 python3-dnf -y
+        $SUDO dnf install git nano mc curl facter neofetch libselinux-python python python3 python3-dnf -y
         $SUDO dnf update -y
 
         PYTHON_BIN=/usr/bin/python
