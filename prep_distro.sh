@@ -12,8 +12,9 @@ echo 'Github: https://github.com/mrGh0s7'
 echo 'Facebook: https://www.facebook.com/techwhale.in'
 echo ''
 
-
-
+#
+# One line execution : bash <(curl -fsSL https://github.com/mrGh0s7/handy-scripts/raw/master/prep_distro.sh)
+#
 install_pip () {
         curl https://bootstrap.pypa.io/get-pip.py | $SUDO $PYTHON_BIN
         $SUDO pip install setuptools -U
