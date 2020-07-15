@@ -50,7 +50,6 @@ prepare_ubuntu() {
         echo
         echo "   Ubuntu Sytem ready for perfection."
         echo
-        ansible --version
 }
 
 prepare_debian() {
@@ -66,8 +65,7 @@ prepare_debian() {
         set +x
         echo
         echo "   Debian Sytem ready for perfection."
-        echo
-        ansible --version
+        
 }
 
 prepare_raspbian() {
@@ -80,8 +78,7 @@ prepare_raspbian() {
         set +x
         echo
         echo "   Rasbpian System ready for perfection."
-        echo
-        ansible --version
+        
 }
 
 prepare_centos() {
@@ -95,8 +92,7 @@ prepare_centos() {
         set +x
         echo
         echo "   CentOS Sytem ready for perfection."
-        echo
-        ansible --version
+        
 }
 
 prepare_fedora() {
@@ -110,8 +106,7 @@ prepare_fedora() {
         set +x
         echo
         echo "   Fedora Sytem ready for perfection."
-        echo
-        ansible --version
+        
 }
 
 prepare_amzn() {
@@ -125,8 +120,7 @@ prepare_amzn() {
         set +x
         echo
         echo "   Amazon Linux 2 ready for perfection."
-        echo
-        ansible --version
+        
 }
 
 usage() {
