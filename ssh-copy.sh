@@ -1,15 +1,31 @@
 #!/usr/bin/env bash
 
+#
+# AUTHOR : Mayur G. Chavhan
+#
+#This script will install and remove ssh-key from remote server.
+echo ""
+echo "      ========================================"
+echo "      ||                                    || "
+echo "      ||    █▀▄▀█ █▀█ █▀▀ █░█ █▀█ █▀ ▀▀█    || "
+echo "      ||    █░▀░█ █▀▄ █▄█ █▀█ █▄█ ▄█ ░░█    ||  "
+echo "      ||                                    || "
+echo "      ||     https://github.com/mrGh0s7     ||  "
+echo "      ========================================"
+echo ""
+
 user=vagrant
 pass="vagrant"
 
-pub_key="$(cat ~/.ssh/id_rsa.pub)"
+#pub_key="$(cat ~/.ssh/id_rsa.pub)"
 
 function _addkey() {
 
     while read SERVER
     do
-    echo "$pass" | ssh-copy-id $user@"${SERVER}" -f -o StrictHostKeyChecking=no
+    
+    # Check if you have installed sshpass on your machine.
+    echo "$pass" | sshpass ssh-copy-id $user@"${SERVER}" -f -o StrictHostKeyChecking=no
 
     done <<\EOF
     172.16.16.100
@@ -22,7 +38,7 @@ function _delkey() {
 
     while read SERVER
     do
-         #ssh -tt $user@"${SERVER}" 'stty raw -echo; sudo rm /home/vagrant/.ssh/id_rsa.pub'
+         ssh -tt $user@"${SERVER}" 'stty raw -echo; sudo echo "" > ~/.ssh/authorized_keys'
 
          ssh-keygen -R "${SERVER}"
 
@@ -49,4 +65,3 @@ else
 
 fi
 
-#_delkey
