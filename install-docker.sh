@@ -1,15 +1,5 @@
 #!/bin/bash
 
-echo ""
-echo "      ============================================== "
-echo "      ||                                          || "
-echo "      ||    █▀▄▀█ █▀█ █▀▀ █░█ █▀█ █▀ ▀▀█          || "
-echo "      ||    █░▀░█ █▀▄ █▄█ █▀█ █▄█ ▄█ ░░█          || "
-echo "      ||                                          || "
-echo "      ||   https://github.com/mayur-chavhan       || "
-echo "      ============================================== "
-echo ""
-
 sudo true
 
 # Install kernel extra's to enable docker aufs support
