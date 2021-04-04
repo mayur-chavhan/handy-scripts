@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 #
-# AUTHOR : Mayur G. Chavhan
+# AUTHOR : Mayur Chavhan
 #
 #This script will install and remove ssh-key from remote server.
 echo ""
-echo "      ========================================"
-echo "      ||                                    || "
-echo "      ||    █▀▄▀█ █▀█ █▀▀ █░█ █▀█ █▀ ▀▀█    || "
-echo "      ||    █░▀░█ █▀▄ █▄█ █▀█ █▄█ ▄█ ░░█    ||  "
-echo "      ||                                    || "
-echo "      ||     https://github.com/mrGh0s7     ||  "
-echo "      ========================================"
+echo "      ============================================== "
+echo "      ||                                          || "
+echo "      ||    █▀▄▀█ █▀█ █▀▀ █░█ █▀█ █▀ ▀▀█          || "
+echo "      ||    █░▀░█ █▀▄ █▄█ █▀█ █▄█ ▄█ ░░█          || "
+echo "      ||                                          || "
+echo "      ||   https://github.com/mayur-chavhan       || "
+echo "      ============================================== "
 echo ""
 
 user=vagrant
@@ -28,7 +28,8 @@ function _addkey() {
     echo "$pass" | sshpass ssh-copy-id $user@"${SERVER}" -f -o StrictHostKeyChecking=no
 
     done <<\EOF
-    172.16.16.100
+
+    172.16.16.100  # Change these Server IPS to remote servers you want to connect
     172.16.16.101
     172.16.16.102
 EOF
