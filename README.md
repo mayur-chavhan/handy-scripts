@@ -1,9 +1,9 @@
-# My Handy Scripts
+# My Handy Scripts 🧰 
 
 Collection of automation scripts.
 
 
-# Docker and Docker-Compose Quick Installation Script
+# Docker and Docker-Compose Quick Installation Script 🐋 
 
 Run below one command to install Docker and Docker-Compose.
 
@@ -11,14 +11,14 @@ Run below one command to install Docker and Docker-Compose.
 curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/install-docker.sh | bash
 ```
 
-# Install Ansible
+# Install Ansible ☸ 
 
 One command to Install Ansible.
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/install-ansible.sh | bash
 ```
-# Better Bash History
+# Better Bash History 🇦🇶 
 
 Improve bash history size, timestamp and logging.
 
@@ -26,7 +26,7 @@ Improve bash history size, timestamp and logging.
 curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/better-history.sh | bash
 ```
 
-# Ghost My ASS
+# Ghost My ASS 💀 
 
 Run below command to completely wipe off your command history and logs.
 
