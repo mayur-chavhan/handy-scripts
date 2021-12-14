@@ -1,27 +1,25 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -o errexit
-set -o nounset
+sudo true
 
-IFS=$(printf '\n\t')
+echo -e "\nInstalling Docker\n"
+wget -qO- https://get.docker.com/ | sh
+wait
+[ -x /usr/bin/docker ] && echo -e "\nDocker is installed\n"
 
-# Docker
-sudo apt remove --yes docker docker-engine docker.io containerd runc || true
-sudo apt update
-sudo apt --yes --no-install-recommends install apt-transport-https ca-certificates
-wget --quiet --output-document=- https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository --yes "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release --codename --short) stable"
-sudo apt update
-sudo apt --yes --no-install-recommends install docker-ce docker-ce-cli containerd.io
-sudo usermod --append --groups docker "$USER"
-sudo systemctl enable docker
-printf '\nDocker installed successfully\n\n'
-
-printf 'Waiting for Docker to start...\n\n'
-sleep 5
-
-# Docker Compose
-sudo wget --output-document=/usr/local/bin/docker-compose "https://github.com/docker/compose/releases/download/$(wget --quiet --output-document=- https://api.github.com/repos/docker/compose/releases/latest | grep --perl-regexp --only-matching '"tag_name": "\K.*?(?=")')/run.sh"
+# Install docker-compose
+COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
+echo -e "\nInstalling Docker-Compose Version: $COMPOSE_VERSION \n"
+COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
+sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
 sudo chmod +x /usr/local/bin/docker-compose
-sudo wget --output-document=/etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose"
-printf '\nDocker Compose installed successfully\n\n'
+sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
+wait
+# Install docker-cleanup command
+echo -e "\nInstalling docker-cleanup tool\n"
+cd /tmp
+git clone https://gist.github.com/76b450a0c986e576e98b.git
+cd 76b450a0c986e576e98b
+sudo mv docker-cleanup /usr/local/bin/docker-cleanup
+sudo chmod +x /usr/local/bin/docker-cleanup
+[ -x /usr/local/bin/docker-cleanup ] && echo -e "\nDocker-Cleanup is installed\n"
