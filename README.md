@@ -8,7 +8,7 @@ Collection of automation scripts.
 Run below one command to install Docker and Docker-Compose.
 
 ``` bash
-curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/install-docker.sh | bash
+curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/master/install-docker.sh | bash
 ```
 
 # Install Ansible ☸ 
