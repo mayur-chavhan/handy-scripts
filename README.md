@@ -23,7 +23,7 @@ curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/install-
 Improve bash history size, timestamp and logging.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/better-history.sh | bash
+curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/master/better-history.sh | bash
 ```
 
 # Ghost My ASS 💀 
