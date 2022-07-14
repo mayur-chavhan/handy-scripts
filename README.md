@@ -11,6 +11,14 @@ Run below one command to install Docker and Docker-Compose.
 curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/master/install-docker.sh | bash
 ```
 
+# Flush Ram for more memory 🤯 
+
+Run below command to flush ram content to free up more memory.
+
+```bash
+curl -sSL https://raw.githubusercontent.com/mayur-chavhan/handy-scripts/Flush-Ram.sh | bash
+```
+
 # Install Ansible ☸ 
 
 One command to Install Ansible.
