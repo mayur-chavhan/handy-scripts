@@ -2,7 +2,7 @@
 
 sudo true
 
-function install_docker() {}
+function install_docker() {
 #check docker is alreadu installed
 if [ -x "$(command -v docker)" ]; then
   echo 'Docker is already installed.'
