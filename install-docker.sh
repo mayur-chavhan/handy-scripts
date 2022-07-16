@@ -5,7 +5,6 @@ sudo true
 #check docker is alreadu installed
 if [ -x "$(command -v docker)" ]; then
   echo 'Docker is already installed.'
-  exit 0
 else
   echo -e "\nInstalling Docker\n"
   wget -qO- https://get.docker.com/ | sh
@@ -15,7 +14,6 @@ fi
 # check if docker-compose is already installed
 if [ -x "$(command -v docker-compose)" ]; then
   echo 'Docker-compose is already installed.'
-  exit 0
 else
   echo -e "\nInstalling Docker-compose\n"
   # Install docker-compose
