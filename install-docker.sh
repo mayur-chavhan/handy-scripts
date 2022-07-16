@@ -34,11 +34,13 @@ fi
 install_docker
 install_docker_compose
 
-# Install docker-cleanup command
-echo -e "\nInstalling docker-cleanup tool\n"
-cd /tmp
-git clone https://gist.github.com/76b450a0c986e576e98b.git
-cd 76b450a0c986e576e98b
-sudo mv docker-cleanup /usr/local/bin/docker-cleanup
-sudo chmod +x /usr/local/bin/docker-cleanup
-[ -x /usr/local/bin/docker-cleanup ] && echo -e "\nDocker-Cleanup is installed\n"
+# check if docker-cleanup is already installed
+if [ -x "$(command -v docker-cleanup)" ]; then
+  echo 'Docker-cleanup is already installed.'
+  exit 0
+else
+  echo -e "\nInstalling Docker-cleanup\n"
+  # Install docker-cleanup
+  sudo curl -L https://raw.githubusercontent.com/docker/docker-cleanup/master/docker-cleanup-ubuntu.sh | sudo bash
+  wait
+fi
