@@ -23,10 +23,10 @@ else
   echo -e "\nInstalling Docker-compose\n"
   # Install docker-compose
   COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "([0-9]{1,4}(\.[0-9a-z]{1,6}){1,5})" | sort --version-sort | tail -n 1`
-  echo -e "\nInstalling Docker-Compose Version: $COMPOSE_VERSION \n"
-  sudo sh -c "curl -L https://github.com/docker/compose/releases/download/V${COMPOSE_VERSION}/docker-compose-linux-`uname -m` > /usr/local/bin/docker-compose"
+  echo -e "\nInstalling Docker-Compose Version: v$COMPOSE_VERSION \n"
+  sudo sh -c "curl -L https://github.com/docker/compose/releases/download/v${COMPOSE_VERSION}/docker-compose-linux-`uname -m` > /usr/local/bin/docker-compose"
   sudo chmod +x /usr/local/bin/docker-compose
-  sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
+  sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/v${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
   wait
 fi
 }
