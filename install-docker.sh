@@ -11,7 +11,7 @@ if [ -x "$(command -v docker)" ]; then
     wait
 
   # check if docker-compose is already installed
-  elif [ -x "$(command -v docker-compose)" ]; then
+  elif [ -x "$(command -v docker-compose)" ]; 
     echo 'Docker-compose is already installed.'
   else
     echo -e "\nInstalling Docker-compose\n"
